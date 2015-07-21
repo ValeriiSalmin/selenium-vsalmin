@@ -10,7 +10,7 @@ public class PrimeTest {
 
     @Test
     public void isPrimeNumberTest(){
-        Assert.assertTrue(isPrime(4));
+        Assert.assertTrue(isPrime(5));
     }
 
     public boolean isPrime(int num){
@@ -21,6 +21,6 @@ public class PrimeTest {
            }
            if (div>2) break;
        }
-        return (div<3) ? true : false;
+        return (div<3);
     }
 }
