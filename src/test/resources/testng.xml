@@ -4,6 +4,7 @@
         <classes>
             <class name="lesson_2.PrimeTest" />
             <class name="lesson_5.GoogleTest" />
+            <class name="lesson_5.StylusSearchTest" />
         </classes>
     </test>
 </suite>
