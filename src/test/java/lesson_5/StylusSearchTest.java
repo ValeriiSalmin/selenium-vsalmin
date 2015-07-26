@@ -12,6 +12,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.*;
 /**
@@ -40,16 +41,20 @@ public class StylusSearchTest {
         searchField.sendKeys(searchValue);
         searchButton = driver.findElement(By.xpath("//*[@class='search']//input[@type='submit']"));
         searchButton.click();
-//        WebDriverWait wait = new WebDriverWait(driver,15);
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='search-list']//span[contains(text(),'Sony') and contains(text(),'Z2')])")));
         searchLinkResult = driver.findElement(By.xpath(".//*[@id='search-list']//span[contains(text(),'Sony') and contains(text(),'Z2')]"));
-        Thread.sleep(5000);
-        assertTrue(searchLinkResult.getText().toLowerCase().contains("Sony".toLowerCase()));
-        assertTrue(searchLinkResult.getText().toLowerCase().contains("Z2".toLowerCase()));
+        searchCondition();
+        assertTrue(searchLinkResult.getText().toLowerCase().contains("Sony".toLowerCase()) &&
+                searchLinkResult.getText().toLowerCase().contains("Z2".toLowerCase()));
+
     }
 
     @AfterTest
     public void tearDown(){
         driver.quit();
+    }
+
+    public void searchCondition(){
+        WebDriverWait wait = new WebDriverWait(driver,15);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='search-list']//span[text()]")));
     }
 }
