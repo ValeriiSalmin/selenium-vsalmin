@@ -36,7 +36,7 @@ public class GoogleTest {
     public void seleniumSearchTest(){
         searchField = driver.findElement(By.id("lst-ib"));
         searchField.sendKeys(searchText);
-        searchLink = driver.findElement(By.xpath(".//*[@id='rso']/div[2]/li[1]/div/h3/a"));
+        searchLink = driver.findElement(By.xpath("//a[contains(@href,'selenium') and contains(text(),'selenium')]"));
         assertTrue(searchLink.getText().toLowerCase().contains(searchText.toLowerCase()));
     }
 
