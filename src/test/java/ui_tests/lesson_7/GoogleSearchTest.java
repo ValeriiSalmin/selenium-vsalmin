@@ -18,7 +18,7 @@ public class GoogleSearchTest extends TestBase{
 
     @Test
     public void seleniumSearchTest(){
-        GoogleSearchPage onGoogleSearchPage = new GoogleSearchPage();
+        GoogleSearchPage onGoogleSearchPage = new GoogleSearchPage(driver);
         onGoogleSearchPage.open(googleWebSite);
         onGoogleSearchPage.searchText(searchText);
         assertTrue(onGoogleSearchPage.findURLElement().getText()
