@@ -13,8 +13,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class TestBase {
 
-    protected static WebDriver driver;
-    protected static WebDriverWait webDriverWait;
+    protected WebDriver driver;
+    protected WebDriverWait webDriverWait;
 
     @BeforeSuite
     public void setUp(){
@@ -27,9 +27,5 @@ public class TestBase {
     @AfterSuite
     public void tearDown(){
         driver.quit();
-    }
-
-    public  void open(String URL){
-        driver.get(URL);
     }
 }
