@@ -2,9 +2,9 @@
 <suite name="Suite1" verbose="1" >
     <test name="Nopackage" >
         <classes>
-            <class name="lesson_2.PrimeTest" />
-            <class name="lesson_5.GoogleTest" />
-            <class name="lesson_5.StylusSearchTest" />
+            <class name="ui_tests.lesson_2.PrimeTest" />
+            <class name="ui_tests.lesson_5.GoogleTest" />
+            <class name="ui_tests.lesson_5.StylusSearchTest" />
         </classes>
     </test>
 </suite>
