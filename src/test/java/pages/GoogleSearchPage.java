@@ -2,6 +2,7 @@ package pages;
 
 import core.TestBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
@@ -12,6 +13,13 @@ public class GoogleSearchPage extends TestBase{
     private WebElement searchField;
     private WebElement searchLink;
 
+    public GoogleSearchPage(WebDriver driver){
+        this.driver=driver;
+    }
+
+    public  void open(String URL){
+        driver.get(URL);
+    }
 
     public void searchText(String searchText){
         searchField = driver.findElement(By.id("lst-ib"));
