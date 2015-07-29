@@ -1,4 +1,4 @@
-package lesson_2;
+package ui_tests.lesson_2;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
