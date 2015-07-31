@@ -25,6 +25,5 @@ public class StylusSearchTest extends TestBase{
         StylusSimpleSearchResultsPage stylusSimpleSearchResultsPage = new StylusSimpleSearchResultsPage(driver);
         assertTrue(stylusSimpleSearchResultsPage.findURLElement().getText().toLowerCase().contains("Sony".toLowerCase()) &&
                 searchLinkResult.getText().toLowerCase().contains("Z2".toLowerCase()));
-
     }
 }

@@ -21,7 +21,7 @@ public class StylusDefaultPage extends TestBase {
 
     public StylusDefaultPage(WebDriver driver, WebDriverWait webDriverWait) {
         this.driver = driver;
-        this.webDriverWait=webDriverWait;
+        this.webDriverWait = webDriverWait;
     }
 
     public void open(String URL) {
