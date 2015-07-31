@@ -10,12 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  * Created by selenium on 29.07.2015.
  */
-public class StylusSearchResultsPage extends TestBase {
+public class StylusSimpleSearchResultsPage extends TestBase {
 
     private WebElement searchLink;
 
 
-    public StylusSearchResultsPage(WebDriver driver){
+    public StylusSimpleSearchResultsPage(WebDriver driver){
 
         this.driver = driver;
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='search-list']//span[text()]")));
