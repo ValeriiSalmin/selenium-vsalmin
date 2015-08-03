@@ -12,7 +12,7 @@ import org.testng.Assert;
 public class StylusProductDetailsPage extends TestBase{
 
 
-    public StylusProductDetailsPage(WebDriver driver){
+    public StylusProductDetailsPage(WebDriver webDriver){
         this.webDriver=webDriver;
     }
 

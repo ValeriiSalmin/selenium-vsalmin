@@ -22,7 +22,7 @@ public class AppleIPhone6SearchTest extends TestBase {
     String nameOfSearchProduct = "Apple iPhone 6 128GB Space Gray";
 
     @Test
-    public void appleIPhone6SearchTest(){
+    public void appleIPhone6SearchTest() throws InterruptedException {
         StylusDefaultPage stylusDefaultPage = new StylusDefaultPage(webDriver,wait);
         stylusDefaultPage.open(URL);
         stylusDefaultPage.openMenu();

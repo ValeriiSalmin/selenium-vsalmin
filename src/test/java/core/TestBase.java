@@ -20,10 +20,10 @@ public class TestBase {
 
     @BeforeSuite
     public void setUp() throws IOException {
-        //driver = new FirefoxDriver();
+
         webDriver = WebDriverFactory.getWebDriver(TestData.BROWSER_NAME);
-        //webDriverWait = new WebDriverWait(driver,10);
         wait = new WebDriverWait(webDriver,50);
+
         webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         webDriver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         webDriver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
