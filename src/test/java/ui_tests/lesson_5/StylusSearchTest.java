@@ -12,7 +12,7 @@ import static org.testng.Assert.*;
  */
 public class StylusSearchTest extends TestBase{
 
-    String URL = "http://www.stylus.com.ua";
+    String URL = "http://stylus.com.ua";
     String searchValue="Sony Z2";
     WebElement searchLinkResult;
 
@@ -22,7 +22,7 @@ public class StylusSearchTest extends TestBase{
         StylusDefaultPage stylusDefaultPage = new StylusDefaultPage(driver,webDriverWait);
         stylusDefaultPage.open(URL);
         stylusDefaultPage.searchText(searchValue);
-        StylusSimpleSearchResultsPage stylusSimpleSearchResultsPage = new StylusSimpleSearchResultsPage(driver);
+        StylusSimpleSearchResultsPage stylusSimpleSearchResultsPage = new StylusSimpleSearchResultsPage(driver, webDriverWait);
         assertTrue(stylusSimpleSearchResultsPage.findURLElement().getText().toLowerCase().contains("Sony".toLowerCase()) &&
                 searchLinkResult.getText().toLowerCase().contains("Z2".toLowerCase()));
     }
