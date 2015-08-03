@@ -19,10 +19,10 @@ public class StylusSearchTest extends TestBase{
     @Test
     public void stylusSearchTest() throws InterruptedException {
 
-        StylusDefaultPage stylusDefaultPage = new StylusDefaultPage(driver,webDriverWait);
+        StylusDefaultPage stylusDefaultPage = new StylusDefaultPage(webDriver,wait);
         stylusDefaultPage.open(URL);
         stylusDefaultPage.searchText(searchValue);
-        StylusSimpleSearchResultsPage stylusSimpleSearchResultsPage = new StylusSimpleSearchResultsPage(driver, webDriverWait);
+        StylusSimpleSearchResultsPage stylusSimpleSearchResultsPage = new StylusSimpleSearchResultsPage(webDriver, wait);
         assertTrue(stylusSimpleSearchResultsPage.findURLElement().getText().toLowerCase().contains("Sony".toLowerCase()) &&
                 searchLinkResult.getText().toLowerCase().contains("Z2".toLowerCase()));
     }

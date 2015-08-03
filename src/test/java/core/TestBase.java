@@ -5,7 +5,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import ui_tests.TestData;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -13,19 +15,23 @@ import java.util.concurrent.TimeUnit;
  */
 public class TestBase {
 
-    protected WebDriver driver;
-    protected WebDriverWait webDriverWait;
+    protected WebDriver webDriver;
+    protected WebDriverWait wait;
 
     @BeforeSuite
-    public void setUp(){
-        driver = new FirefoxDriver();
-        webDriverWait = new WebDriverWait(driver,10);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
+    public void setUp() throws IOException {
+        //driver = new FirefoxDriver();
+        webDriver = WebDriverFactory.getWebDriver(TestData.BROWSER_NAME);
+        //webDriverWait = new WebDriverWait(driver,10);
+        wait = new WebDriverWait(webDriver,50);
+        webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
+        webDriver.manage().window().maximize();
     }
 
     @AfterSuite
     public void tearDown(){
-        driver.quit();
+        webDriver.quit();
     }
 }

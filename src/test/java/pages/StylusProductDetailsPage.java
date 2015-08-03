@@ -13,10 +13,10 @@ public class StylusProductDetailsPage extends TestBase{
 
 
     public StylusProductDetailsPage(WebDriver driver){
-        this.driver=driver;
+        this.webDriver=webDriver;
     }
 
     public WebElement findHeaderElement(){
-        return driver.findElement(By.xpath("//header[@class='title']//h1"));
+        return webDriver.findElement(By.xpath("//header[@class='title']//h1"));
     }
 }

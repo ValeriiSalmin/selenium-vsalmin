@@ -13,21 +13,21 @@ public class GoogleSearchPage extends TestBase{
     private WebElement searchField;
     private WebElement searchLink;
 
-    public GoogleSearchPage(WebDriver driver){
-        this.driver=driver;
+    public GoogleSearchPage(WebDriver webDriver){
+        this.webDriver=webDriver;
     }
 
     public  void open(String URL){
-        driver.get(URL);
+        webDriver.get(URL);
     }
 
     public void searchText(String searchText){
-        searchField = driver.findElement(By.id("lst-ib"));
+        searchField = webDriver.findElement(By.id("lst-ib"));
         searchField.sendKeys(searchText);
     }
 
     public WebElement findURLElement(){
-        searchLink = driver.findElement(By.xpath("//a[contains(@href,'selenium') and contains(text(),'selenium')]"));
+        searchLink = webDriver.findElement(By.xpath("//a[contains(@href,'selenium') and contains(text(),'selenium')]"));
         return searchLink;
     }
 }

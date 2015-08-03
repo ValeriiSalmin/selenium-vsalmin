@@ -15,14 +15,14 @@ public class StylusSimpleSearchResultsPage extends TestBase {
     private WebElement searchLink;
 
 
-    public StylusSimpleSearchResultsPage(WebDriver driver, WebDriverWait webDriverWait){
+    public StylusSimpleSearchResultsPage(WebDriver webDriver, WebDriverWait wait){
 
-        this.driver = driver;
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='search-list']//span[text()]")));
+        this.webDriver = webDriver;
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='search-list']//span[text()]")));
     }
 
     public WebElement findURLElement(){
-        searchLink = driver.findElement(By.xpath("//div[@id='search-list']//a//span[contains(text(),'Sony') and contains(text(),'Z2')]"));
+        searchLink = webDriver.findElement(By.xpath("//div[@id='search-list']//a//span[contains(text(),'Sony') and contains(text(),'Z2')]"));
         return searchLink;
     }
 }

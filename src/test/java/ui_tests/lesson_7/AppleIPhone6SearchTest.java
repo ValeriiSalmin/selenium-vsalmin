@@ -23,14 +23,14 @@ public class AppleIPhone6SearchTest extends TestBase {
 
     @Test
     public void appleIPhone6SearchTest(){
-        StylusDefaultPage stylusDefaultPage = new StylusDefaultPage(driver,webDriverWait);
+        StylusDefaultPage stylusDefaultPage = new StylusDefaultPage(webDriver,wait);
         stylusDefaultPage.open(URL);
         stylusDefaultPage.openMenu();
         stylusDefaultPage.goTo(product);
         stylusDefaultPage.setLowPrice(lowPrice);
         stylusDefaultPage.setUpperPrice(upperPrice);
         stylusDefaultPage.confirm();
-        StylusProductDetailsPage stylusProductDetailsPage = new StylusProductDetailsPage(driver);
+        StylusProductDetailsPage stylusProductDetailsPage = new StylusProductDetailsPage(webDriver);
         assertTrue(stylusProductDetailsPage.findHeaderElement().getText().contains(nameOfSearchProduct));
     }
 }
