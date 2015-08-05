@@ -2,7 +2,7 @@
 <suite name="Suite1" verbose="1" >
     <test name="Nopackage" >
         <classes>
-            <class name="ui_tests.lesson_5.GoogleTest" />
+            <class name="ui_tests.lesson_7.GoogleSearchTest" />
             <!--<class name="ui_tests.lesson_5.GoogleTest" />-->
             <!--<class name="ui_tests.lesson_5.StylusSearchTest" />-->
         </classes>
