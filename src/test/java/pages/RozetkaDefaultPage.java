@@ -13,13 +13,14 @@ public class RozetkaDefaultPage extends TestBase {
 
     public RozetkaDefaultPage(WebDriver webDriver){
         this.webDriver = webDriver;
+        open(URL);
         Assert.assertTrue(webDriver.getCurrentUrl().equals(URL));
     }
 
     public void enterToPrivateCabinet(){
         webDriver.findElement(By.xpath("//a[@href='https://my.rozetka.com.ua/signin/']")).click();
     }
-    public void open(){
+    public void open(String URL){
         webDriver.get(URL);
     }
 

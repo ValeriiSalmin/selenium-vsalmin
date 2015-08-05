@@ -20,11 +20,11 @@ public class RozetkaPrivateCabinetPage extends TestBase {
         webDriver.findElement(By.xpath("//div[@type='vkontakte']//a")).click();
     }
 
-    public void fillCredentials(){
-        webDriver.findElement().sendKeys();
-        webDriver.findElement().sendKeys();
-        webDriver.findElement().click();
-    }
+//    public void fillCredentials(){
+//        webDriver.findElement().sendKeys();
+//        webDriver.findElement().sendKeys();
+//        webDriver.findElement().click();
+//    }
 
     public WebElement findElement(){
         return webDriver.findElement(By.xpath("//a[@class='head_name']"));
