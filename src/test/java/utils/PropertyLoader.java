@@ -14,7 +14,7 @@ public class PropertyLoader {
     private static String workingDir = System.getProperty("user.dir");
 
     private static final String PROPERTY_FILE = workingDir + "\\target\\classes\\application.properties";
-    private  static String loadProperty(String name){
+    public static String loadProperty(String name){
         Properties props = new Properties();
         try {
             props.load(new FileInputStream(PROPERTY_FILE));

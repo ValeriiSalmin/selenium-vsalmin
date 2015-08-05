@@ -1,14 +1,15 @@
 package utils;
 
 import org.testng.Reporter;
-import org.testng.log4testng.Logger;
+import org.apache.log4j.Logger;
+//import org.testng.log4testng.Logger;
 
 
 /**
  * Created by selenium on 05.08.2015.
  */
 public class Log4Test {
-    
+
     private static final Logger LOGGER = Logger.getLogger(Log4Test.class);
 
     private static final String INFO_LOG = "INFO: \"%s\"";
