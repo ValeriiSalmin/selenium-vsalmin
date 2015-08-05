@@ -21,6 +21,7 @@ public class RozetkaPrivateCabinetPage extends TestBase {
     }
 
     public void fillCredentials(String email,String password){
+        
         webDriver.findElement(By.xpath("//input[@name='email']")).sendKeys();
         webDriver.findElement(By.xpath("//input[@name='pass']")).sendKeys();
         webDriver.findElement(By.xpath("//*[@id='install_allow']")).click();
