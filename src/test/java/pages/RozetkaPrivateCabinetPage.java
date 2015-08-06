@@ -42,9 +42,4 @@ public class RozetkaPrivateCabinetPage extends TestBase {
             webDriver.switchTo().window(winHandle);
         }
     }
-
-    public WebElement findElement1(){
-        return webDriver.findElement(By.xpath("//h1[@id='title']"));
-    }
-
 }
