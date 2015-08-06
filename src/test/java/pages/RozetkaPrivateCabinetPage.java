@@ -11,19 +11,23 @@ import org.testng.Assert;
  */
 public class RozetkaPrivateCabinetPage extends TestBase {
 
+    String winHandleBefore=null;
+
     public RozetkaPrivateCabinetPage(WebDriver webDriver){
         this.webDriver = webDriver;
-        //Assert.assertTrue(webDriver.getCurrentUrl().equals(URL));
     }
 
     public void enterAsVK(){
+        winHandleBefore = webDriver.getWindowHandle();
         webDriver.findElement(By.xpath("//div[@type='vkontakte']//a")).click();
+        for(String winHandle : webDriver.getWindowHandles()){
+            webDriver.switchTo().window(winHandle);
+        }
     }
 
-    public void fillCredentials(String email,String password){
-        
-        webDriver.findElement(By.xpath("//input[@name='email']")).sendKeys();
-        webDriver.findElement(By.xpath("//input[@name='pass']")).sendKeys();
+    public void fillCredentialsAndLogin(String email,String password){
+        webDriver.findElement(By.xpath("//input[@name='email']")).sendKeys(email);
+        webDriver.findElement(By.xpath("//input[@name='pass']")).sendKeys(password);
         webDriver.findElement(By.xpath("//*[@id='install_allow']")).click();
     }
 
@@ -31,7 +35,16 @@ public class RozetkaPrivateCabinetPage extends TestBase {
         return webDriver.findElement(By.xpath("//a[@class='head_name']"));
     }
 
-    public void clickName(){
+    public void clickOnName(){
+        winHandleBefore = webDriver.getWindowHandle();
         webDriver.findElement(By.xpath("//a[@class='head_name']")).click();
+        for(String winHandle : webDriver.getWindowHandles()){
+            webDriver.switchTo().window(winHandle);
+        }
     }
+
+    public WebElement findElement1(){
+        return webDriver.findElement(By.xpath("//h1[@id='title']"));
+    }
+
 }

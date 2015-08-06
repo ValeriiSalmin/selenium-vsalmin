@@ -14,14 +14,18 @@ public class RozetkaSocialNetworkAutorTest extends TestBase{
     @Test
     public void RozetkaSocialNetworkAutorTest(){
         String email = "clickua8@gmail.com";
-        String password = "";
+        String password = "abcdefghA1";
         String profile="Valeriy Salmin";
+        String profile1="Валерій Салмін";
 
         RozetkaDefaultPage rozetkaDefaultPage = new RozetkaDefaultPage(webDriver);
         rozetkaDefaultPage.enterToPrivateCabinet();
         RozetkaPrivateCabinetPage rozetkaPrivateCabinetPage = new RozetkaPrivateCabinetPage(webDriver);
-        rozetkaPrivateCabinetPage.fillCredentials(email,password);
-        Assert.assertTrue(rozetkaPrivateCabinetPage.findElement().getText().equals(profile));
+        rozetkaPrivateCabinetPage.enterAsVK();
+        rozetkaPrivateCabinetPage.fillCredentialsAndLogin(email, password);
+        Assert.assertTrue(rozetkaPrivateCabinetPage.findElement().getText().equals(profile1));
+        rozetkaPrivateCabinetPage.clickOnName();
+        Assert.assertTrue(rozetkaPrivateCabinetPage.findElement1().getText().trim().contains(profile1));
 
     }
 }

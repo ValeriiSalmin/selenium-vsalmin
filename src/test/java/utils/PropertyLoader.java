@@ -11,7 +11,8 @@ import java.util.Properties;
  */
 public class PropertyLoader {
 
-    private static String workingDir = System.getProperty("user.dir");
+    //private static String workingDir = System.getProperty("user.dir");
+    private static String workingDir = "e:\\work\\Project\\selenium-vsalmin";
 
     private static final String PROPERTY_FILE = workingDir + "\\target\\classes\\application.properties";
     public static String loadProperty(String name){
