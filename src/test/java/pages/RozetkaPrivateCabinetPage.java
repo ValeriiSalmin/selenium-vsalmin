@@ -1,7 +1,9 @@
 package pages;
 
+import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor;
 import core.TestBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -26,7 +28,10 @@ public class RozetkaPrivateCabinetPage extends TestBase {
     }
 
     public void fillCredentialsAndLogin(String email,String password){
-        webDriver.findElement(By.xpath("//input[@name='email']")).sendKeys(email);
+       // webDriver.findElement(By.xpath("//input[@name='email']")).sendKeys(email);
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
+       // WebElement element = webDriver.findElement(By.linkText("Click ME"));
+        js.executeScript("document.getElementByName('email')[0].value="+email+"");
         webDriver.findElement(By.xpath("//input[@name='pass']")).sendKeys(password);
         webDriver.findElement(By.xpath("//*[@id='install_allow']")).click();
     }

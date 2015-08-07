@@ -26,10 +26,9 @@ public class StylusDefaultPage extends TestBase {
         this.wait = wait;
     }
 
-    public void open(String URL) throws InterruptedException {
+    public void open(String URL){
         webDriver.get(URL);
         assertTrue(isCurrentPageOpened(URL));
-        Thread.sleep(5000);
     }
 
     public boolean isCurrentPageOpened(String URL){

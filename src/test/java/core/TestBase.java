@@ -30,6 +30,10 @@ public class TestBase {
         webDriver.manage().window().maximize();
     }
 
+    public void open(String URL){
+        webDriver.get(URL);
+    }
+
     @AfterSuite
     public void tearDown(){
         webDriver.quit();
