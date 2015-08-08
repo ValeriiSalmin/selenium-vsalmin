@@ -13,6 +13,7 @@ public class FinalTest extends TestBase{
         String findProduct1 = "Apple MacBook Pro Retina 13\" (Z0QP000X6)";
         String findProduct2 = "Apple MacBook Pro Retina 15\" (MGXA2UA/A)";
         String typeOfSorting = "от дорогих к дешевым";
+        String verifyLabel = "Сравниваем ноутбуки";
 
 
         @Test
@@ -44,7 +45,7 @@ public class FinalTest extends TestBase{
                 Reporter.log("INFO: Compare products");
                 rozetkaAppleNoteBooksPage.clickToCompare();
                 RozetkaNoteBooksComparisonPage rozetkaComparisonPage = new RozetkaNoteBooksComparisonPage(webDriver);
-                Assert.assertTrue(rozetkaComparisonPage.getTitle().getText().contains("Сравниваем ноутбуки"));
+                Assert.assertTrue(rozetkaComparisonPage.getTitle().getText().contains(verifyLabel));
                 Assert.assertTrue(rozetkaComparisonPage.getProduct(findProduct1) && rozetkaComparisonPage.getProduct(findProduct2));
                 Reporter.log("INFO: Finish FinalTest");
         }
