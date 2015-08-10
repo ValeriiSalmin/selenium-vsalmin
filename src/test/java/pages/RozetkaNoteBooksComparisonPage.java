@@ -22,7 +22,8 @@ public class RozetkaNoteBooksComparisonPage extends TestBase {
 
     public boolean getProduct(String product){
         Boolean productExist=false;
-        List<WebElement> list = webDriver.findElements(By.xpath("//div[@class='g-title']/a[contains(@href,'http://rozetka.com.ua')]"));
+        WebElement select = webDriver.findElement(By.xpath("//div[@class='g-title']"));
+        List<WebElement> list = select.findElements(By.xpath("/a[contains(@href,'http://rozetka.com.ua')]"));
         for (WebElement item:list){
             if (item.getText().contains(product)){
                 productExist=true;

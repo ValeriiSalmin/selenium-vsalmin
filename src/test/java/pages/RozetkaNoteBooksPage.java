@@ -23,7 +23,8 @@ public class RozetkaNoteBooksPage extends TestBase {
 
     public int getNumberNotesProducers(){
         int count=0;
-        List<WebElement> list = webDriver.findElements(By.xpath("(//ul[@class='m-cat-subl'])[2]/li[@class='m-cat-subl-i']"));
+        WebElement select = webDriver.findElement(By.xpath("(//ul[@class='m-cat-subl'])[2]"));
+        List<WebElement> list = select.findElements(By.xpath("/li[@class='m-cat-subl-i']"));
         for (WebElement item:list){
             count++;
         }
@@ -31,7 +32,8 @@ public class RozetkaNoteBooksPage extends TestBase {
     }
 
     public void selectAppleProducer(){
-        List<WebElement> list = webDriver.findElements(By.xpath("(//li[@class='m-cat-l-i'])[2]//a[@class='m-cat-subl-i-link']"));
+        WebElement select = webDriver.findElement(By.xpath("(//li[@class='m-cat-l-i'])[2]"));
+        List<WebElement> list = select.findElements(By.xpath("//a[@class='m-cat-subl-i-link']"));
         for (WebElement item:list){
             if (item.getText().equals("Apple")){
                 webDriver.get(item.getAttribute("href"));

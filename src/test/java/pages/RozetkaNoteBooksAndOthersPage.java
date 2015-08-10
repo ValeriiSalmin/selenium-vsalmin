@@ -26,7 +26,10 @@ public class RozetkaNoteBooksAndOthersPage extends TestBase {
     }
 
     public int getNumberUnderNoteBooks(){
-        return webDriver.findElements(By.xpath("(//ul[@class='pab-items'])[1]/li[@class='pab-items-i']")).size();
+        WebElement select = webDriver.findElement(By.xpath("(//ul[@class='pab-items'])[1]"));
+        List<WebElement> list = select.findElements(By.xpath("/li[@class='pab-items-i']"));
+       // return webDriver.findElements(By.xpath("(//ul[@class='pab-items'])[1]/li[@class='pab-items-i']")).size();
+        return list.size();
     }
 
 
