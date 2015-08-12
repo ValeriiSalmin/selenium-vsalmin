@@ -23,8 +23,9 @@ public class RozetkaNoteBooksPage extends TestBase {
 
     public int getNumberNotesProducers(){
         int count=0;
-        WebElement select = webDriver.findElement(By.xpath("(//ul[@class='m-cat-subl'])[2]"));
-        List<WebElement> list = select.findElements(By.xpath("/li[@class='m-cat-subl-i']"));
+    //    WebElement select = webDriver.findElement(By.xpath("(//ul[@class='m-cat-subl'])[2]"));
+   //     List<WebElement> list = select.findElements(By.xpath("/li[@class='m-cat-subl-i']"));
+        List<WebElement> list = webDriver.findElements(By.xpath("(//ul[@class='m-cat-subl'])[2]/li[@class='m-cat-subl-i']"));
         for (WebElement item:list){
             count++;
         }
