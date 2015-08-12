@@ -25,11 +25,8 @@ public class RozetkaNoteBooksAndOthersPage extends TestBase {
         webDriver.findElement(By.xpath("//a[@href='http://rozetka.com.ua/notebooks/c80004/']")).click();
     }
 
-    public int getNumberUnderNoteBooks(){
-        WebElement select = webDriver.findElement(By.xpath("(//ul[@class='pab-items'])[1]"));
-        List<WebElement> list = select.findElements(By.xpath("/li[@class='pab-items-i']"));
-       // return webDriver.findElements(By.xpath("(//ul[@class='pab-items'])[1]/li[@class='pab-items-i']")).size();
-        return list.size();
+    public int getNumberUnderNoteBooks() throws InterruptedException {
+        return webDriver.findElements(By.xpath("(//ul[@class='pab-items'])[1]/li[@class='pab-items-i']")).size();
     }
 
 
