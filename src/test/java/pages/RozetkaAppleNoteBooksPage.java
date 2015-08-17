@@ -33,8 +33,7 @@ public class RozetkaAppleNoteBooksPage extends TestBase{
 
     public boolean findProduct(String product){
         Boolean productExist=false;
-        WebElement select = webDriver.findElement(By.xpath("//div[@name='goods_list']//div[contains(@class,'g-i-tile-i-title clearfix')]"));
-        List<WebElement> list = select.findElements(By.xpath("/a"));
+        List<WebElement> list = webDriver.findElements(By.xpath("//div[@name='goods_list']//div[contains(@class,'g-i-tile-i-title clearfix')]/a"));
         for (WebElement item:list){
             if (item.getText().contains(product)){
                 productExist=true;
